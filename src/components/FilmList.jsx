@@ -18,7 +18,7 @@ const FilmList = () => {
 		dots: false,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 7,
+		slidesToShow: 8,
 		slidesToScroll: 2,
 		responsive: [
 			{

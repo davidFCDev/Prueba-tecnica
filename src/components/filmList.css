@@ -11,15 +11,11 @@
     font-weight: 700;
 }
 
-.film-list {
-    
-}
-
 .film {
     display: flex;
     flex-direction: column;
-    width: 160px;
-    gap: 0.6rem;
+    width: 150px;
+    gap: 0.5rem;
 }
 
 .film:hover {
@@ -56,5 +52,5 @@
 
 .slick-prev,
 .slick-next {
-	top: 35%;
+	top: 35% !important;
 }

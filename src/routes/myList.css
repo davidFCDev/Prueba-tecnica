@@ -4,6 +4,19 @@
 	background-color: rgb(252, 252, 252);
 }
 
+.empty-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+}
+
+.empty-section h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
 .ratings-section {
 	display: flex;
 	flex-direction: column;

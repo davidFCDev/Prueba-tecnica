@@ -1,6 +1,5 @@
 import './nav.css';
 import { FaUserAlt } from 'react-icons/fa';
-import { MdSettings } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 const Nav = () => {
@@ -9,15 +8,10 @@ const Nav = () => {
 			<Link to={'/'}>
 				<h1>TMDB</h1>
 			</Link>
-			<div className='nav-links'>
-				<a href='#'>Películas</a>
-				<Link to={'/mylist'}>
-					<FaUserAlt className='hover:scale-125'/>
-				</Link>
-				<a href='#'>
-					<MdSettings className='hover:scale-125'/>
-				</a>
-			</div>
+			<Link to={'/mylist'} className='nav-link'>
+				<span>Comment section</span>
+				<FaUserAlt/>
+			</Link>
 		</section>
 	);
 };

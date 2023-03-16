@@ -15,17 +15,18 @@ const Hero = () => {
 		const res = await getMovie(searchText);
 		const results = res.data ? res.data.results : null;
 		console.log(results);
-		navigate(`/search-results?results=${encodeURIComponent(JSON.stringify(results))}`);
+		navigate(
+			`/search-results?results=${encodeURIComponent(JSON.stringify(results))}`
+		);
 	};
 
 	return (
 		<section className='hero'>
 			<div className='search-container'>
 				<div className='search-text'>
-					<h1>Bienvenido</h1>
+					<h1>Welcome</h1>
 					<h2>
-						Millones de películas, programas de televisión y personas por
-						descubrir. Explora ahora.
+						Millions of movies, TV shows and people to discover. Explore now.
 					</h2>
 				</div>
 				<div className='search'>
