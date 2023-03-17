@@ -1,6 +1,6 @@
 .nav {
 	width: 100%;
-	background: linear-gradient( 135deg, #045346, #098a74 );
+	background: linear-gradient(135deg, #045346, #098a74);
 	color: white;
 	display: flex;
 	flex-direction: row;
@@ -30,15 +30,11 @@
 	color: #181919;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
 	.nav h1 {
 		font-size: 25px;
 	}
 	.nav-link {
 		font-size: 15px;
 	}
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-
 }

@@ -20,8 +20,8 @@
 }
 
 .film img {
-    width: 150px;
-    border-radius: 10px;
+	width: 150px;
+	border-radius: 10px;
 }
 
 .film img:hover {
@@ -34,7 +34,6 @@
 	transform: scale(1);
 	transition: 0.4s;
 }
-
 
 .film-text {
 	display: flex;
@@ -57,4 +56,53 @@
 .slick-prev,
 .slick-next {
 	top: 35% !important;
+}
+
+@media (max-width: 767px) {
+	.film-section {
+		height: 450px;
+		padding: 0rem 3rem;
+	}
+	.film-section h2 {
+		font-size: 22px;
+	}
+	.film img {
+		width: 95px;
+	}
+	.film-text h3 {
+		font-size: 14px;
+	}
+
+	.film-text p {
+		font-size: 13px;
+	}
+	.slick-prev,
+	.slick-next {
+		top: 30% !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.film-section {
+		height: 320px;
+		padding: 0rem 5rem;
+		gap: 0.4rem;
+	}
+	.film-section h2 {
+		font-size: 22px;
+	}
+	.film img {
+		width: 100px;
+	}
+	.film-text h3 {
+		font-size: 14px;
+	}
+
+	.film-text p {
+		font-size: 13px;
+	}
+	.slick-prev,
+	.slick-next {
+		top: 32% !important;
+	}
 }

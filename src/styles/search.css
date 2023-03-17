@@ -45,7 +45,8 @@
 	border: none;
 	padding: 0.6rem 1rem;
 	border-radius: 30px;
-	width: 70em;
+	width: 90%;
+	height: 50px;
 	transition: all ease-in-out 0.5s;
 	margin-right: -3rem;
     font-size: 16px;
@@ -123,31 +124,55 @@
 		padding: 2rem 3rem;
 	}
 	.search-text h1 {
-		font-size: 35px;
+		font-size: 30px;
 	}
 	
 	.search-text h2 {
-		font-size: 20px;
+		font-size: 18px;
 	}
 	.search-input {
-		display: flex;
-		outline: none;
-		background-color: #f6f6f6;
-		color: #424242;
-		border: none;
-		padding: 0.6rem 1rem;
-		border-radius: 30px;
-		width: 70em;
-		transition: all ease-in-out 0.5s;
-		margin-right: -3rem;
+		height: 40px;
 		font-size: 12px;
 	}
+	.custom-btn {
+		width: 100px;
+		height: 40px;
+	}
+	.btn-4 {
+		line-height: 40px;
+	}
 	.btn-4 span {
-		padding: 0.3rem 1rem;
 		font-size: 13px;
+		padding: 0.1rem;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-
+	.search-container {
+		gap: 0.5rem;
+		width: 85%;
+		padding: 1rem 3rem;
+	}
+	.search-text h1 {
+		font-size: 26px;
+	}
+	
+	.search-text h2 {
+		font-size: 14px;
+	}
+	.search-input {
+		height: 30px;
+		font-size: 12px;
+	}
+	.custom-btn {
+		height: 30px;
+		width: 90px;
+	}
+	.btn-4 {
+		line-height: 30px;
+	}
+	.btn-4 span {
+		font-size: 12px;
+		padding: 0.1rem;
+	}
 }

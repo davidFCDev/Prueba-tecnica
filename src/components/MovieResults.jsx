@@ -8,7 +8,9 @@ const MovieResults = ({ results, POSTER_URL, notFoundImage }) => {
 					<li>
 						<img
 							src={
-								result.poster_path
+								window.innerWidth < 760 && result.backdrop_path
+									? `${POSTER_URL}${result.backdrop_path}`
+									: result.poster_path
 									? `${POSTER_URL}${result.poster_path}`
 									: notFoundImage
 							}
