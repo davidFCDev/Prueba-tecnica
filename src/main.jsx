@@ -1,42 +1,21 @@
-import { lazy, Suspense, useState, useEffect } from 'react';
+import { lazy, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './reducers/store';
-import Loader from './components/Loader';
-import './index.css';
+import './styles/index.css';
 
 const Home = lazy(() => import('./routes/Home'));
 const ErrorPage = lazy(() => import('./routes/ErrorPage'));
-const MyList = lazy(() => import('./routes/MyList'));
-const Movies = lazy(() => import('./routes/Movies'));
-const Results = lazy(() => import('./routes/Results'));
+const MyList = lazy(() => import('./routes/MyListPage'));
+const Movies = lazy(() => import('./routes/MoviePage'));
+const Results = lazy(() => import('./routes/ResultsPage'));
 
 const App = () => {
-	const [showLoader, setShowLoader] = useState(false);
-
-	useEffect(() => {
-		const timeoutId = setTimeout(() => {
-			setShowLoader(true);
-		}, 500);
-		return () => clearTimeout(timeoutId);
-	}, []);
-
 	return (
 		<Provider store={store}>
 			<BrowserRouter>
-				<Suspense
-					fallback={
-						<div
-							style={{
-								opacity: showLoader ? 1 : 0,
-								transition: 'opacity 0.3s ease-in-out 0.5s',
-							}}
-						>
-							<Loader />
-						</div>
-					}
-				>
+				<Suspense fallback={<></>}>
 					<Routes>
 						<Route path='/' element={<Home />} />
 						<Route path='/mylist' element={<MyList />} />

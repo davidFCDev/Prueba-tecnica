@@ -1,9 +1,9 @@
-import { Ring } from '@uiball/loaders';
+import { DotSpinner } from '@uiball/loaders';
 
 const Loader = () => {
 	return (
-		<div className='loader flex justify-center items-center'>
-			<Ring size={40} lineWeight={5} speed={2} color='black' />
+		<div className='loader-container'>
+			<DotSpinner size={40} speed={0.9} color='black' />
 		</div>
 	);
 };

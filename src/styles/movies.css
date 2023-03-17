@@ -26,10 +26,11 @@
 }
 
 .info-container {
-	padding: 1rem 6rem;
+	max-width: 70%;
+	padding: 1rem 5rem;
 	display: flex;
-	gap: 2rem;
 	align-items: center;
+	gap: 4rem;
 }
 
 .info-container img {
@@ -39,7 +40,6 @@
 }
 
 .text-container {
-	width: 500px;
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -72,44 +72,41 @@
 }
 
 .form {
-	width: 95%;
-	height: 200px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
-	gap: 0.8rem;
 	color: white;
 }
 
 textarea {
+	max-height: 100px;
 	background-color: rgba(255, 255, 255, 0.235);
-	max-height: 75px;
-	outline: none;
 	border: 1px solid rgb(119, 119, 119);
+	outline: none;
 	border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .chars {
-    text-align: right;
-    color: rgb(204, 204, 204);
-    font-weight: 100;
-    font-size: 12px;
+	text-align: right;
+	color: rgb(204, 204, 204);
+	font-weight: 100;
+	font-size: 12px;
 }
 
 .btn-submit {
-    font-size: 17px;
-    font-weight: 500;
-    padding: 0.2rem;
-    background-color: #059179;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+	font-size: 17px;
+	font-weight: 500;
+	padding: 0.2rem;
+	background-color: #059179;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .btn-submit:hover {
-    font-size: 17px;
-    padding: 0.2rem;
-    background-color: #03806b;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+	font-size: 17px;
+	padding: 0.2rem;
+	background-color: #03806b;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
-

@@ -1,10 +1,12 @@
-import './hero.css';
 import { getMovie } from '../controllers/movieController';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loader from './Loader';
+import '../styles/search.css';
 
 const Hero = () => {
 	const [searchText, setSearchText] = useState('');
+	const [searching, setSearching] = useState(false);
 	const navigate = useNavigate();
 
 	const handleSearchInputChange = event => {
@@ -12,13 +14,24 @@ const Hero = () => {
 	};
 
 	const handleSearchButtonClick = async () => {
+		setSearching(true);
 		const res = await getMovie(searchText);
 		const results = res.data ? res.data.results : null;
 		console.log(results);
-		navigate(
-			`/search-results?results=${encodeURIComponent(JSON.stringify(results))}`
-		);
+		setTimeout(() => {
+			navigate(
+				`/search-results?results=${encodeURIComponent(JSON.stringify(results))}`
+			);
+		}, 1500);
 	};
+
+	useEffect(() => {
+		if (searching) {
+			setTimeout(() => {
+				setSearching(false);
+			}, 2000);
+		}
+	}, [searching]);
 
 	return (
 		<section className='hero'>
@@ -33,7 +46,7 @@ const Hero = () => {
 					<input
 						type='text'
 						className='search-input'
-						placeholder='Busca una película, serie, genero...'
+						placeholder='Search a movie'
 						value={searchText}
 						onChange={handleSearchInputChange}
 					/>
@@ -43,6 +56,7 @@ const Hero = () => {
 					>
 						<span>Search</span>
 					</button>
+					{searching && <Loader />}
 				</div>
 			</div>
 		</section>

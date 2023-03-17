@@ -1,18 +1,20 @@
-import './filmList.css';
 import { getMovies } from '../controllers/movieController';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CustomPrevArrow from './CustomPrevArrow';
 import CustomNextArrow from './CustomNextArrow';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Link } from 'react-router-dom';
+import '../styles/filmList.css';
 
 const POSTER_SIZE = 'w500';
 const POSTER_URL = `https://image.tmdb.org/t/p/${POSTER_SIZE}`;
 
-const FilmList = () => {
+const MovieList = () => {
 	const [movies, setMovies] = useState([]);
+	const [, setSelectedMovieId] = useState(null);
+	const navigate = useNavigate();
 
 	const settings = {
 		dots: false,
@@ -41,13 +43,20 @@ const FilmList = () => {
 			{
 				breakpoint: 480,
 				settings: {
-					slidesToShow: 1,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 				},
 			},
 		],
 		prevArrow: <CustomPrevArrow />,
 		nextArrow: <CustomNextArrow />,
+	};
+
+	const handleMovieClick = movieId => {
+		setSelectedMovieId(movieId);
+		setTimeout(() => {
+			navigate(`/movies/${movieId}`);
+		}, 800);
 	};
 
 	useEffect(() => {
@@ -61,22 +70,20 @@ const FilmList = () => {
 
 	return (
 		<section className='film-section'>
-			<h2>Tendencias</h2>
+			<h2>Trending</h2>
 			<Slider {...settings}>
 				{movies.map(movie => (
-					<li key={movie.id} className='film-list'>
-						<Link to={`/movies/${movie.id}`}>
-							<div className='film'>
-								<img
-									src={`${POSTER_URL}${movie.poster_path}`}
-									alt={movie.title}
-								/>
-								<div className='film-text'>
-									<h3>{movie.name || movie.title}</h3>
-									<p>{movie.release_date || movie.first_air_date}</p>
-								</div>
+					<li key={movie.id}>
+						<div className='film' onClick={() => handleMovieClick(movie.id)}>
+							<img
+								src={`${POSTER_URL}${movie.poster_path}`}
+								alt={movie.title}
+							/>
+							<div className='film-text'>
+								<h3>{movie.name || movie.title}</h3>
+								<p>{movie.release_date || movie.first_air_date}</p>
 							</div>
-						</Link>
+						</div>
 					</li>
 				))}
 			</Slider>
@@ -84,4 +91,4 @@ const FilmList = () => {
 	);
 };
 
-export default FilmList;
+export default MovieList;

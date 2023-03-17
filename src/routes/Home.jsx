@@ -1,6 +1,6 @@
 import Nav from '../components/Nav';
-import Hero from '../components/Hero';
-import FilmList from '../components/FilmList';
+import Search from '../components/Search';
+import MovieList from '../components/MovieList';
 import { Toaster } from 'react-hot-toast';
 
 function Home() {
@@ -8,8 +8,8 @@ function Home() {
 	return (
 		<div>
 			<Nav />
-			<Hero />
-			<FilmList />
+			<Search />
+			<MovieList />
 			<Toaster />
 		</div>
 	);

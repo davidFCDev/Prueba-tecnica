@@ -1,6 +1,6 @@
-import './nav.css';
 import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import '../styles/nav.css';
 
 const Nav = () => {
 	return (
@@ -9,7 +9,7 @@ const Nav = () => {
 				<h1>TMDB</h1>
 			</Link>
 			<Link to={'/mylist'} className='nav-link'>
-				<span>Comment section</span>
+				<span>Comments</span>
 				<FaUserAlt/>
 			</Link>
 		</section>

@@ -4,6 +4,19 @@
     background-color: rgb(252, 252, 252);
 }
 
+.no-results-found {
+    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3rem;
+}
+
+.no-results-found h2 {
+	font-size: 25px;
+	font-weight: 600;
+}
+
 .results-container {
     display: flex;
     flex-direction: column;
