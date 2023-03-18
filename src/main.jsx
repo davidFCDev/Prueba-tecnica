@@ -1,39 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './reducers/store';
-import Home from './routes/Home';
-import ErrorPage from './routes/ErrorPage';
-import MyList from './routes/MyList';
-import Movies from './routes/Movies';
-import Results from './routes/Results';
-import './index.css';
+import './styles/index.css';
 
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Home />,
-		errorElement: <ErrorPage />,
-	},
-	{
-		path: '/mylist',
-		element: <MyList />,
-	},
-	{
-		path: 'movies/:id',
-		element: <Movies />,
-	},
-	{
-		path: 'search-results',
-		element: <Results />,
-	},
-]);
+const Home = lazy(() => import('./routes/Home'));
+const ErrorPage = lazy(() => import('./routes/ErrorPage'));
+const MyList = lazy(() => import('./routes/MyListPage'));
+const Movies = lazy(() => import('./routes/MoviePage'));
+const Results = lazy(() => import('./routes/ResultsPage'));
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-	<React.StrictMode>
+const App = () => {
+	return (
 		<Provider store={store}>
-			<RouterProvider router={router} />
+			<BrowserRouter>
+				<Suspense fallback={<></>}>
+					<Routes>
+						<Route path='/' element={<Home />} />
+						<Route path='/mylist' element={<MyList />} />
+						<Route path='/movies/:id' element={<Movies />} />
+						<Route path='/search-results' element={<Results />} />
+						<Route path='*' element={<ErrorPage />} />
+					</Routes>
+				</Suspense>
+			</BrowserRouter>
 		</Provider>
-	</React.StrictMode>
-);
+	);
+};
+
+createRoot(document.getElementById('root')).render(<App />);
