@@ -1,9 +1,9 @@
 import { BiArrowBack } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
-import Nav from '../components/Nav';
-import '../styles/results.css';
 import { noResultsImage, notFoundImage, POSTER_URL } from '../constants';
+import Nav from '../components/Nav';
+import '../styles/resultsPage.css';
 
 const Search = () => {
 	const queryParams = new URLSearchParams(location.search);
@@ -14,7 +14,7 @@ const Search = () => {
 			<div>
 				<Nav />
 				<div className='no-results-found'>
-					<img src={noResultsImage} alt='noResults' className='w-[200px]' />
+					<img src={noResultsImage} alt='noResults' className='w-[200px] sm:w-[150px] md:w-[200px]' />
 					<h2>¡No results found!</h2>
 					<Link to={'/'}>
 						<p className='flex items-center gap-2 italic hover:underline'>

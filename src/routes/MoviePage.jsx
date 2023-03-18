@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Nav from '../components/Nav';
 import InfoMovies from '../components/InfoMovies';
-import '../styles/movies.css';
+import '../styles/moviePage.css';
 
 const Movies = () => {
 	const { id } = useParams();
@@ -47,8 +47,13 @@ const Movies = () => {
 		return <div />;
 	}
 
+	let backgroundImage = movie.backdrop_path;
+	if (window.innerWidth < 760) {
+		backgroundImage = movie.poster_path;
+	}
+
 	const headerStyle = {
-		backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+		backgroundImage: `url(https://image.tmdb.org/t/p/w1280${backgroundImage})`,
 		backgroundRepeat: 'no-repeat',
 		backgroundSize: 'cover',
 	};

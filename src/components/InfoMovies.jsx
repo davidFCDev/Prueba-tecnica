@@ -15,7 +15,9 @@ const MovieInfo = ({
 		<div className='info-container'>
 			<img
 				src={
-					movie.poster_path
+					window.innerWidth < 760 && movie.backdrop_path
+						? `${POSTER_URL}${movie.backdrop_path}`
+						: movie.poster_path
 						? `${POSTER_URL}${movie.poster_path}`
 						: notFoundImage
 				}

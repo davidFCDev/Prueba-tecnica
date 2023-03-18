@@ -1,6 +1,6 @@
 import Nav from '../components/Nav';
 import Search from '../components/Search';
-import MovieList from '../components/MovieList';
+import Trending from '../components/Trending';
 import { Toaster } from 'react-hot-toast';
 
 function Home() {
@@ -9,7 +9,7 @@ function Home() {
 		<div>
 			<Nav />
 			<Search />
-			<MovieList />
+			<Trending />
 			<Toaster />
 		</div>
 	);
