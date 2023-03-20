@@ -6,7 +6,7 @@ import '../styles/myListPage.css';
 const EmptyList = lazy(() => import('../components/EmptyList'));
 const MovieList = lazy(() => import('../components/RatingList'));
 
-function MyList() {
+const MyList = () => {
 	const reviews = useSelector(state => state.movie.myReviews);
 
 	if (!reviews.length) {
