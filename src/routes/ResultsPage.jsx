@@ -5,7 +5,7 @@ import { noResultsImage, notFoundImage, POSTER_URL } from '../constants';
 import Nav from '../components/Nav';
 import '../styles/resultsPage.css';
 
-const Search = () => {
+const SearchPage = () => {
 	const queryParams = new URLSearchParams(location.search);
 	const results = JSON.parse(queryParams.get('results') || '[]');
 
@@ -51,4 +51,4 @@ const Search = () => {
 	);
 };
 
-export default Search;
+export default SearchPage;

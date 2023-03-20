@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import InfoMovies from '../components/InfoMovies';
 import '../styles/moviePage.css';
 
-const Movies = () => {
+const MoviePage = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 
@@ -81,4 +81,4 @@ const Movies = () => {
 	);
 };
 
-export default Movies;
+export default MoviePage;

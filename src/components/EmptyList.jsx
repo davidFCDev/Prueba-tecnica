@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 
-function EmptyList() {
+const EmptyList = () => {
 	return (
 		<div className='empty-section'>
 			<h2>¡You have not made any comment yet!</h2>
