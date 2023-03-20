@@ -9,7 +9,7 @@ const Nav = () => {
 				<h1>TMDB</h1>
 			</Link>
 			<Link to={'/mylist'} className='nav-link'>
-				<span>Comments</span>
+				<span>My list</span>
 				<FaUserAlt/>
 			</Link>
 		</section>

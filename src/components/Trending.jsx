@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/movieList.css';
 
-const MovieList = () => {
+const Trending = () => {
 	const [movies, setMovies] = useState([]);
 	const [, setSelectedMovieId] = useState(null);
 	const navigate = useNavigate();
@@ -51,4 +51,4 @@ const MovieList = () => {
 	);
 };
 
-export default MovieList;
+export default Trending;

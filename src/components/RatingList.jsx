@@ -1,6 +1,6 @@
 import { BsFillStarFill } from 'react-icons/bs';
 
-function MovieList({ reviews }) {
+const RatingList = ({ reviews }) => {
 	return (
 		<div className='ratings-container'>
 			{reviews.map((review, i) => (
@@ -10,7 +10,7 @@ function MovieList({ reviews }) {
 						{Array(review.rating)
 							.fill()
 							.map((_, index) => (
-								<BsFillStarFill key={index} />
+								<BsFillStarFill key={index} data-testid="star-icon"/>
 							))}
 					</p>
 					<p><span className='text-black font-semibold'>Review: </span>{review.comment}</p>
@@ -20,4 +20,4 @@ function MovieList({ reviews }) {
 	);
 }
 
-export default MovieList;
+export default RatingList;
