@@ -7,9 +7,9 @@ import './styles/index.css';
 
 const Home = lazy(() => import('./routes/Home'));
 const ErrorPage = lazy(() => import('./routes/ErrorPage'));
-const MyList = lazy(() => import('./routes/MyListPage'));
-const Movies = lazy(() => import('./routes/MoviePage'));
-const Results = lazy(() => import('./routes/ResultsPage'));
+const MyListPage = lazy(() => import('./routes/MyListPage'));
+const MoviePage = lazy(() => import('./routes/MoviePage'));
+const ResultsPage = lazy(() => import('./routes/ResultsPage'));
 
 const App = () => {
 	return (
@@ -18,9 +18,9 @@ const App = () => {
 				<Suspense fallback={<></>}>
 					<Routes>
 						<Route path='/' element={<Home />} />
-						<Route path='/mylist' element={<MyList />} />
-						<Route path='/movies/:id' element={<Movies />} />
-						<Route path='/search-results' element={<Results />} />
+						<Route path='/mylist' element={<MyListPage />} />
+						<Route path='/movies/:id' element={<MoviePage />} />
+						<Route path='/search-results' element={<ResultsPage />} />
 						<Route path='*' element={<ErrorPage />} />
 					</Routes>
 				</Suspense>

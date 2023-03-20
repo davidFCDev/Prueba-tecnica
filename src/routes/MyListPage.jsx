@@ -6,7 +6,7 @@ import '../styles/myListPage.css';
 const EmptyList = lazy(() => import('../components/EmptyList'));
 const MovieList = lazy(() => import('../components/RatingList'));
 
-const MyList = () => {
+const MyListPage = () => {
 	const reviews = useSelector(state => state.movie.myReviews);
 
 	if (!reviews.length) {
@@ -38,4 +38,4 @@ const MyList = () => {
 	);
 }
 
-export default MyList;
+export default MyListPage;
