@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { lazy, Suspense } from 'react';
 import Nav from '../components/Nav';
-import '../styles/myList.css';
+import '../styles/myListPage.css';
 
 const EmptyList = lazy(() => import('../components/EmptyList'));
 const MovieList = lazy(() => import('../components/RatingList'));

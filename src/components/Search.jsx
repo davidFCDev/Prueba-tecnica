@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Loader from './Loader';
 import '../styles/search.css';
 
-const Hero = () => {
+const Search = () => {
 	const [searchText, setSearchText] = useState('');
 	const [searching, setSearching] = useState(false);
 	const navigate = useNavigate();
@@ -63,4 +63,4 @@ const Hero = () => {
 	);
 };
 
-export default Hero;
+export default Search;

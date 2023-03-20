@@ -69,10 +69,13 @@
 	gap: 2px;
 }
 
-@media (max-width: 767px) {
-
+@media (max-width: 1024px) {
+	.ratings-section {
+		padding: 1.5rem 4rem;
+	}
+	.ratings-container {
+		gap: 1.4rem;
+		padding: 1rem 0rem;
+	}
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-
-}

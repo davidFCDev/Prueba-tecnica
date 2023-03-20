@@ -14,7 +14,7 @@
 	border-bottom-right-radius: 15px;
 	box-shadow: 0 0 4px rgb(73, 73, 73);
 	background-color: #006f83;
-    background: linear-gradient( 135deg, #006f83, #019ab6 );
+    background: linear-gradient( 135deg, #006f83, #66a7b3 );
 	color: rgb(255, 255, 255);
 }
 
@@ -80,8 +80,8 @@
 }
 
 .btn-4 {
-	background-color: #004dff;
-	background-image: linear-gradient(315deg, #004dff 0%, #03c8a8 74%);
+	background-color: #2969fd;
+	background-image: linear-gradient(315deg, #2768ff 0%, #03c8a8 74%);
 	line-height: 42px;
 	padding: 0;
 	border: none;
@@ -144,6 +144,13 @@
 	.btn-4 span {
 		font-size: 13px;
 		padding: 0.1rem;
+	}
+	.loader-container {
+		position: fixed;
+		top: 45%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
 	}
 }
 
