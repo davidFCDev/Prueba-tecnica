@@ -1,13 +1,12 @@
+import PropTypes from 'prop-types';
 import { getMovie } from '../controllers/movieController';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Loader from './Loader';
 import '../styles/search.css';
 
-const Search = () => {
+const Search = ({ navigate }) => {
 	const [searchText, setSearchText] = useState('');
 	const [searching, setSearching] = useState(false);
-	const navigate = useNavigate();
 
 	const handleSearchInputChange = event => {
 		setSearchText(event.target.value);
@@ -29,7 +28,7 @@ const Search = () => {
 		if (searching) {
 			setTimeout(() => {
 				setSearching(false);
-			}, 2000);
+			}, 1500);
 		}
 	}, [searching]);
 
@@ -61,6 +60,10 @@ const Search = () => {
 			</div>
 		</section>
 	);
+};
+
+Search.propTypes = {
+	navigate: PropTypes.func.isRequired,
 };
 
 export default Search;

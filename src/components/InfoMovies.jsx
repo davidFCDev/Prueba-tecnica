@@ -1,5 +1,8 @@
 import { notFoundImage, POSTER_URL } from '../constants';
+import PropTypes from 'prop-types';
 import { lazy } from 'react';
+import 'matchmedia-polyfill';
+import 'matchmedia-polyfill/matchMedia.addListener';
 
 const LazyForm = lazy(() => import('../components/Form'));
 
@@ -38,6 +41,26 @@ const MovieInfo = ({
 			</div>
 		</div>
 	);
+};
+
+MovieInfo.propTypes = {
+	movie: PropTypes.shape({
+		title: PropTypes.string.isRequired,
+		backdrop_path: PropTypes.string,
+		poster_path: PropTypes.string,
+		genres: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string.isRequired,
+			})
+		),
+		release_date: PropTypes.string.isRequired,
+		overview: PropTypes.string.isRequired,
+	}).isRequired,
+	handleSubmit: PropTypes.func.isRequired,
+	rating: PropTypes.number.isRequired,
+	setRating: PropTypes.func.isRequired,
+	comment: PropTypes.string.isRequired,
+	setComment: PropTypes.func.isRequired,
 };
 
 export default MovieInfo;

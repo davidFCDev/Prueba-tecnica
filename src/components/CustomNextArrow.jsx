@@ -1,14 +1,20 @@
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowForwardIos } from 'react-icons/md';
+import PropTypes from 'prop-types';
 
-const CustomNextArrow = (props) => {
-    const { className, style, onClick } = props;
-    return (
-        <MdArrowForwardIos
-            className={className}
-            style={{ ...style, display: "block", color: "gray" }}
-            onClick={onClick}
-        />
-    );
+const CustomNextArrow = ({ className, style, onClick }) => {
+	return (
+		<MdArrowForwardIos
+			className={className}
+			style={{ ...style, display: 'block', color: 'gray' }}
+			onClick={onClick}
+		/>
+	);
+};
+
+CustomNextArrow.propTypes = {
+	className: PropTypes.string,
+	style: PropTypes.object,
+	onClick: PropTypes.func,
 };
 
 export default CustomNextArrow;

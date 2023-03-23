@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const MovieResults = ({ results, POSTER_URL, notFoundImage }) => {
@@ -28,6 +29,21 @@ const MovieResults = ({ results, POSTER_URL, notFoundImage }) => {
 			))}
 		</>
 	);
+};
+
+MovieResults.propTypes = {
+	results: PropTypes.arrayOf(
+		PropTypes.shape({
+			id: PropTypes.number.isRequired,
+			title: PropTypes.string.isRequired,
+			release_date: PropTypes.string.isRequired,
+			overview: PropTypes.string.isRequired,
+			poster_path: PropTypes.string,
+			backdrop_path: PropTypes.string,
+		})
+	).isRequired,
+	POSTER_URL: PropTypes.string.isRequired,
+	notFoundImage: PropTypes.string.isRequired,
 };
 
 export default MovieResults;

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Rating } from '@mui/material';
 import { MAX_LENGTH } from '../constants';
 
@@ -29,6 +30,14 @@ const Form = ({ handleSubmit, rating, setRating, comment, setComment }) => {
 			</div>
 		</form>
 	);
+};
+
+Form.propTypes = {
+	handleSubmit: PropTypes.func.isRequired,
+	rating: PropTypes.number.isRequired,
+	setRating: PropTypes.func.isRequired,
+	comment: PropTypes.string.isRequired,
+	setComment: PropTypes.func.isRequired,
 };
 
 export default Form;

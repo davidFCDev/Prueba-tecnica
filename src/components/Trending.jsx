@@ -1,22 +1,21 @@
+import PropTypes from 'prop-types';
 import { getMovies } from '../controllers/movieController';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Slider from 'react-slick';
 import { POSTER_URL, sliderSettings } from '../constants';
+import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/movieList.css';
 
-const Trending = () => {
+const Trending = ({ navigate }) => {
 	const [movies, setMovies] = useState([]);
 	const [, setSelectedMovieId] = useState(null);
-	const navigate = useNavigate();
 
 	const handleMovieClick = movieId => {
 		setSelectedMovieId(movieId);
 		setTimeout(() => {
 			navigate(`/movies/${movieId}`);
-		}, 400);
+		}, 100);
 	};
 
 	useEffect(() => {
@@ -49,6 +48,10 @@ const Trending = () => {
 			</Slider>
 		</section>
 	);
+};
+
+Trending.propTypes = {
+	navigate: PropTypes.func.isRequired,
 };
 
 export default Trending;
